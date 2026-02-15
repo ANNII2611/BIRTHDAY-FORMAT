@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 20th Birthday 💖</title>
+<style>
+body { margin:0; font-family:'Segoe UI',sans-serif; overflow:hidden; background:#fff0f5; }
+section { position:absolute; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:40px; opacity:0; transform:translateX(100%); pointer-events:none; transition:0.5s; background:linear-gradient(to bottom,#fff5f8,#fdf0ff); }
+section.show { opacity:1; transform:translateX(0); pointer-events:auto; }
+section.left { transform:translateX(-100%); }
+section.right { transform:translateX(100%); }
+
+h1 { font-size:36px; color:#d63384; text-align:center; margin-bottom:20px; }
+p { font-size:18px; color:#555; max-width:600px; text-align:center; margin-bottom:20px; }
+
+.image-container img { width:300px; border-radius:20px; cursor:pointer; transition:0.5s; }
+.image-container img:hover { transform:scale(1.05); box-shadow:0 0 30px rgba(255,105,180,0.6); }
+.caption { margin-top:10px; font-size:16px; color:#c2185b; opacity:0; transition:0.5s; text-align:center; }
+.caption.show { opacity:1; }
+
+.emoji { position:fixed; font-size:20px; animation:float 6s linear infinite; opacity:0.6; }
+@keyframes float { 0% {transform:translateY(100vh);} 100%{transform:translateY(-10vh);} }
+
+#confetti { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:999; }
+
+button { padding:10px 20px; font-size:16px; cursor:pointer; border-radius:20px; background:#ff69b4; color:white; border:none; }
+.music-btn { position:fixed; top:20px; right:20px; z-index:1000; }
+.nav-buttons { position:fixed; bottom:20px; width:100%; display:flex; justify-content:center; gap:20px; z-index:1000; }
+</style>
+</head>
+<body>
+
+<!-- Confetti Canvas -->
+<canvas id="confetti"></canvas>
+
+<!-- Music Button -->
+<button class="music-btn" onclick="toggleMusic()">🎶 Play Music</button>
+<audio id="bg-music" loop>
+  <source src="music/tujhmeinrab-violin.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ===== 19 PAGES ===== -->
+<section class="show">
+  <h1>Page 1 — Cover 💖</h1>
+  <p>Since 2006, the World Learned to Smile. From the moment you were born, the world became softer, brighter, and more beautiful. And I’m so happy I get to walk through it with you 💖</p>
+  <div class="image-container"><img src="images/photo1.jpg" onclick="showCaption(this)"><div class="caption">The beginning ✨</div></div>
+</section>
+
+<section>
+  <h1>Page 2 — The Beginning ✨</h1>
+  <p>In 2006, the world didn’t know it yet — but it was about to receive one of the most beautiful souls. You were born, and somehow, everything became lighter.</p>
+  <div class="image-container"><img src="images/photo2.jpg" onclick="showCaption(this)"><div class="caption">You changed the world 🤍</div></div>
+</section>
+
+<section>
+  <h1>Page 3 — Her First Home 👨‍👩‍👧‍👦</h1>
+  <p>Before the world knew you, your family did. They loved you first, protected you, and helped you become the beautiful soul you are today. You are made of their love 🤍</p>
+  <div class="image-container"><img src="images/photo3.jpg" onclick="showCaption(this)"><div class="caption">Made of love 🤍</div></div>
+</section>
+
+<section>
+  <h1>Page 4 — Built-In Best Friends 👯‍♀️</h1>
+  <p>Some people find best friends later. You were born with yours. The laughter, the chaos, the childhood memories — that bond is forever. Family by blood, friends by heart 💞</p>
+  <div class="image-container"><img src="images/photo4.jpg" onclick="showCaption(this)"><div class="caption">Forever friends 💞</div></div>
+</section>
+
+<section>
+  <h1>Page 5 — Why You're Awesome 💌</h1>
+  <p>You matter because you really listen. You love big, even when it’s tough. You make people feel safe just by being you. You’ve changed my world quietly — and for the better.</p>
+  <div class="image-container"><img src="images/photo5.jpg" onclick="showCaption(this)"><div class="caption">Your heart 💖</div></div>
+</section>
+
+<section>
+  <h1>Page 6 — Your Chill Vibes 🌸</h1>
+  <p>You have this calm energy that makes everything feel okay. Like soft music after a long day. Just being around you makes life feel easier.</p>
+  <div class="image-container"><img src="images/photo6.jpg" onclick="showCaption(this)"><div class="caption">Calm & soothing 🌸</div></div>
+</section>
+
+<section>
+  <h1>Page 7 — Your Spark 😂</h1>
+  <p>You have a way of making everything more fun. Even silly little moments feel bigger with you. Life’s better just because you’re in it.</p>
+  <div class="image-container"><img src="images/photo7.jpg" onclick="showCaption(this)"><div class="caption">Contagious joy 😂</div></div>
+</section>
+
+<section>
+  <h1>Page 8 — Your Quirky Wonder 🌟</h1>
+  <p>You notice the small stuff nobody else sees. You do things your own way — and it works. You bring magic into ordinary days. That’s what makes you unforgettable.</p>
+  <div class="image-container"><img src="images/photo8.jpg" onclick="showCaption(this)"><div class="caption">Magic touch ✨</div></div>
+</section>
+
+<section>
+  <h1>Page 9 — Your Light 🌙</h1>
+  <p>Even on cloudy days, your light shines quietly, softly, beautifully. Never forget how much you matter, how loved you are, and how much joy you bring just by being you.</p>
+  <div class="image-container"><img src="images/photo9.jpg" onclick="showCaption(this)"><div class="caption">Shining light 🌟</div></div>
+</section>
+
+<section>
+  <h1>Page 10 — Little You 🕰</h1>
+  <p>That little girl in this picture had no idea how amazing she would become. But she already had the same soft heart, the same light, the same magic. And she still does ✨</p>
+  <div class="image-container"><img src="images/photo10.jpg" onclick="showCaption(this)"><div class="caption">Then & Now ✨</div></div>
+</section>
+
+<section>
+  <h1>Page 11 — Our Bond 💞</h1>
+  <p>Not everyone gets a friendship like this. One that feels safe. One that feels honest. One that feels like home. I don’t take that for granted.</p>
+  <div class="image-container"><img src="images/photo11.jpg" onclick="showCaption(this)"><div class="caption">Safe haven 💞</div></div>
+</section>
+
+<section>
+  <h1>Page 12 — Our Story 🌷</h1>
+  <p>We met. A sudden click — like a perfect photo. And suddenly, everything felt easier 💖</p>
+  <div class="image-container"><img src="images/photo12.jpg" onclick="showCaption(this)"><div class="caption">Our first click 💖</div></div>
+</section>
+
+<section>
+  <h1>Page 13 — Memory #1 📸</h1>
+  <p>Some moments don’t feel special while they’re happening. But then you look back and realize they shaped your heart forever.</p>
+  <div class="image-container"><img src="images/photo13.jpg" onclick="showCaption(this)"><div class="caption">A moment to remember 📸</div></div>
+</section>
+
+<section>
+  <h1>Page 14 — Memory #2 📸</h1>
+  <p>Laughing until it hurt. With you, even the simplest moments become unforgettable.</p>
+  <div class="image-container"><img src="images/photo14.jpg" onclick="showCaption(this)"><div class="caption">Unforgettable laughter 😂</div></div>
+</section>
+
+<section>
+  <h1>Page 15 — 20 Things I Love About You ✨</h1>
+  <p>1. Your laugh<br>2. Your kindness<br>3. Your honesty<br>4. Your heart<br>5. Your warmth<br>6. Your courage<br>7. Your patience<br>8. Your creativity<br>9. Your loyalty<br>10. Your empathy<br>11. Your strength<br>12. Your smile<br>13. Your humour<br>14. Your hugs<br>15. Your voice<br>16. The way you make me feel seen<br>17. Your presence<br>18. Your love for life<br>19. Your soul<br>20. Being able to call you my best friend</p>
+  <div class="image-container"><img src="images/photo15.jpg" onclick="showCaption(this)"><div class="caption">All the things I adore 💖</div></div>
+</section>
+
+<section>
+  <h1>Page 16 — Welcome to Your 20s 🌱</h1>
+  <p>This is your era of growth. Of discovering who you are. Of chasing dreams and protecting your peace. And I know you’re going to shine.</p>
+  <div class="image-container"><img src="images/photo16.jpg" onclick="showCaption(this)"><div class="caption">Shine bright 🌟</div></div>
+</section>
+
+<section>
+  <h1>Page 17 — A Letter To You 💌</h1>
+  <p>I hope this year you are gentle with yourself. I hope you allow yourself to rest. To grow. To love fully. And I hope you never doubt your light — even on days it feels dim.</p>
+  <div class="image-container"><img src="images/photo17.jpg" onclick="showCaption(this)"><div class="caption">A heartfelt note 💌</div></div>
+</section>
+
+<section>
+  <h1>Page 18 — Thank You For Being You 🤍</h1>
+  <p>Thank you for choosing me as your friend. Thank you for trusting me. Thank you for loving me the way you do. You’re one of the best gifts life has given me.</p>
+  <div class="image-container"><img src="images/photo18.jpg" onclick="showCaption(this)"><div class="caption">Grateful for you 🤍</div></div>
+</section>
+
+<section>
+  <h1>Page 19 — Always 🌸</h1>
+  <p>2006 gave the world you. And life gave me you as my best friend. No matter where life takes us, you are never alone, never too much, never anything but deeply loved. Happy 20th birthday 💖 — Your Bestie</p>
+  <div class="image-container"><img src="images/photo19.jpg" onclick="showCaption(this)"><div class="caption">Forever 💖</div></div>
+</section>
+
+<!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <button onclick="prevPage()">⬅ Previous</button>
+  <button onclick="nextPage()">Next ➡</button>
+</div>
+
+<script>
+// ===== PAGE NAVIGATION & CAPTIONS =====
+let current=0;
+const pages=document.querySelectorAll("section");
+
+function showPage(index){
+  pages.forEach((page,i)=>{
+    page.classList.remove("show","left","right");
+    if(i<index){ page.classList.add("left"); }
+    else if(i>index){ page.classList.add("right"); }
+  });
+  pages[index].classList.add("show");
+  burstConfetti();
+}
+
+function nextPage(){ if(current<pages.length-1){ current++; showPage(current); } }
+function prevPage(){ if(current>0){ current--; showPage(current); } }
+function showCaption(img){ img.nextElementSibling.classList.toggle("show"); }
+
+// ===== FLOATING EMOJIS =====
+function createEmoji(){
+  const emoji=document.createElement("div");
+  emoji.classList.add("emoji");
+  emoji.style.left=Math.random()*100+"vw";
+  emoji.innerText=["💖","✨","🌸","🤍","💞"][Math.floor(Math.random()*5)];
+  document.body.appendChild(emoji);
+  setTimeout(()=>emoji.remove(),6000);
+}
+setInterval(createEmoji,1000);
+
+// ===== MUSIC =====
+const music=document.getElementById("bg-music");
+const button=document.querySelector(".music-btn");
+function toggleMusic(){
+  if(music.paused){ music.volume=0.3; music.play(); button.innerText="⏸ Pause Music"; }
+  else{ music.pause(); button.innerText="🎶 Play Music"; }
+}
+
+// ===== CONFETTI =====
+const confettiCanvas=document.getElementById("confetti");
+const confettiCtx=confettiCanvas.getContext("2d");
+
+function resizeCanvas(){ confettiCanvas.width=window.innerWidth; confettiCanvas.height=window.innerHeight; }
+window.addEventListener('resize',resizeCanvas);
+resizeCanvas();
+
+class ConfettiParticle{
+  constructor(){ this.reset(); }
+  reset(){ this.x=Math.random()*confettiCanvas.width; this.y=Math.random()*-confettiCanvas.height; this.size=Math.random()*8+4; this.speed=Math.random()*3+2; this.angle=Math.random()*2*Math.PI; this.color=['#ff69b4','#ffd700','#ff4500','#00ffff','#adff2f'][Math.floor(Math.random()*5)]; this.rotationSpeed=Math.random()*0.1-0.05; }
+  update(){ this.y+=this.speed; this.angle+=this.rotationSpeed; if(this.y>confettiCanvas.height) this.reset(); }
+  draw(){ confettiCtx.save(); confettiCtx.translate(this.x,this.y); confettiCtx.rotate(this.angle); confettiCtx.fillStyle=this.color; confettiCtx.fillRect(-this.size/2,-this.size/2,this.size,this.size); confettiCtx.restore(); }
+}
+
+let confettiParticles=[];
+for(let i=0;i<150;i++) confettiParticles.push(new ConfettiParticle());
+
+function animateConfetti(){ confettiCtx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height); confettiParticles.forEach(p=>{ p.update(); p.draw(); }); requestAnimationFrame(animateConfetti); }
+animateConfetti();
+
+function burstConfetti(){ confettiParticles.forEach(p=>p.reset()); }
+
+// Initialize
+showPage(current);
+</script>
+
+</body>
+</html>
