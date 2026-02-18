@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAPPIEST 20th Birthday 💖</title>
+<title>A BEAUTIFUL 20th BIRTHDAY 💖</title>
 <style>
 /* ===== BASE ===== */
 body, html {
@@ -27,6 +27,58 @@ body, html {
   font-size:6vmin; color:white; letter-spacing:3px;
   animation:cinemaZoom 3s ease;
 }
+/* ===== Sparkle Animation for Intro ===== */
+/* ===== Sparkle + Pop Animation ===== */
+.sparkle-pop {
+  font-size:6vmin;
+  color:white;
+  letter-spacing:3px;
+  display:inline-block;
+  opacity:0;
+  transform: scale(0.7);
+  animation: popIn 1s ease forwards, sparkle 2s infinite alternate;
+  transform-origin: center;
+}
+
+/* Pop / bounce entrance */
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Glow / sparkle effect */
+@keyframes sparkle {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4; }
+  25% { text-shadow: 0 0 10px #fff, 0 0 20px #ffb6c1; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ff69b4; }
+  75% { text-shadow: 0 0 10px #fff, 0 0 20px #ffb6c1; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4; }
+}
+
+
+@keyframes sparkle {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4; }
+  25% { text-shadow: 0 0 10px #fff, 0 0 20px #ffb6c1; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ff69b4; }
+  75% { text-shadow: 0 0 10px #fff, 0 0 20px #ffb6c1; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4; }
+}
+
+/* ===== Pop + Zoom Animation for Intro ===== */
+.pop-zoom {
+  animation: sparkle 2s infinite alternate, popZoom 0.8s ease forwards;
+  transform-origin: center;
+}
+
+@keyframes popZoom {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
 @keyframes cinemaZoom{ from{opacity:0; transform:scale(0.7);} to{opacity:1; transform:scale(1);} }
 @keyframes fadeOutIntro{ to{opacity:0; visibility:hidden;} }
 
@@ -104,7 +156,6 @@ button{ padding:2vw 5vw; font-size:4vmin; border:none; border-radius:20px; backg
 @keyframes glowPulse{ from{text-shadow:0 0 10px #fff;} to{text-shadow:0 0 40px #ff69b4;} }
 
 /* ===== MOBILE RESPONSIVENESS ===== */
-/* ===== MOBILE RESPONSIVENESS ===== */
 @media screen and (max-width:768px){
   .page h1 { 
     font-size:9vw; 
@@ -155,7 +206,7 @@ button{ padding:2vw 5vw; font-size:4vmin; border:none; border-radius:20px; backg
 
 <!-- CINEMA INTRO -->
 <div id="intro-screen">
-  <h1 class="cinema-title">A Special Birthday Experience 💖</h1>
+  <h1 class="cinema-title">Surprise! 💖 A Day with Pure Happiness 💖</h1>
 </div>
 
 <!-- MUSIC BUTTON -->
@@ -167,7 +218,7 @@ button{ padding:2vw 5vw; font-size:4vmin; border:none; border-radius:20px; backg
 <!-- ================== 26 SLIDES ================== -->
 <!-- Slide 1 -->
 <section class="page" style="background:linear-gradient(to bottom,#FFD700,#FFEA70)">
-  <h1>HAPPIEST BIRTHDAY SWAPNALI!!!!! 🎉💖✨</h1>
+  <h1>HAPPIEST BIRTHDAY SWAPNALI!!!!! 🎉💖</h1>
 </section>
 
 <!-- Slide 2 -->
@@ -192,17 +243,17 @@ button{ padding:2vw 5vw; font-size:4vmin; border:none; border-radius:20px; backg
 <section class="page" style="background:linear-gradient(to bottom,#FFD700,#FFEA70)">
   <h1>ARE YOU ENJOYING YOUR CELEBRATIONS? 🎊💞</h1>
   <div class="options">
-    <button onclick="selectOption()">YES 😊💖</button>
-    <button onclick="selectOption()">VERY MUCH 😍🎉</button>
+    <button onclick="selectOption()">LOVED IT 😊💖</button>
+    <button onclick="selectOption()">SUPER HAPPY 😍🎉</button>
   </div>
 </section>
 
 <!-- Slide 5 -->
 <section class="page" style="background:linear-gradient(to bottom,#FFD700,#FFEA70)">
-  <h1>Birthday Compliment 💖🌸</h1>
+  <h1>LOVED YOUR BIRTHDAY COMPLIMENTS? 💖🌸</h1>
   <div class="options">
-    <button onclick="selectOption()">CONFIDENT 😎✨</button>
-    <button onclick="selectOption()">LOVED 💖🎀</button>
+    <button onclick="selectOption()">ABSOLUTELY 😎✨</button>
+    <button onclick="selectOption()">SMILING ALL DAY 💖🎀</button>
   </div>
 </section>
 
@@ -454,15 +505,12 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   }
 
-  // Auto-start music on first click (mobile-friendly)
-  document.body.addEventListener("click", function firstTap(){
-    music.play().catch(()=>{});
-    document.body.removeEventListener("click", firstTap);
-  });
-
+  
   // ===== SHOW FIRST PAGE =====
   showPage(currentPage);
 });
 </script>
 </body>
+</body>
 </html>
+
